@@ -245,7 +245,8 @@ impl PlotPoints {
         (0..points)
             .map(|i| {
                 let t = start + i as f64 * increment;
-                function(t).into()
+                let (x, y) = function(t);
+                [x, y]
             })
             .collect()
     }
